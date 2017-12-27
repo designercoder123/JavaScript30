@@ -60,5 +60,33 @@ The html file contains 3 div elements where each div corresponds to a certain ha
   
   # Awesome ! its done !
   
+  # Problems with the above code 
+  
+  * If you follow this method you will notice that when the second hand completes a full rotation, it snaps a little and then continues. This happens because we are creating the date object every second. So when the second hand reaches 12 it creates a new date object and the second value is turned to zero which inturn affects the degree and sets the degree to zero, hence the snap !
+  
+  To fix this ( i will add the new html ) we could do this :
+  ```
+  const secHand = document.querySelector('.second-hand');
+      const minHand = document.querySelector('.min-hand');
+      const hourHand = document.querySelector('.hour-hand');
+      const time = new Date();
+          const seconds = time.getSeconds();
+          const secondDegrees = ((seconds/60)*360)+90;
+          const min = time.getMinutes();
+          const hr = time.getHours();
+          const mindeg = ((min/60)*360)+90;
+          const hrdeg = ((hr/12)*360)+90;
+      function getDate(){
+          secondDegrees = secondDegrees + 6;
+          mindeg = mindeg + (6/60);
+          hrdeg = hrdeg + (30/3600);
+          secHand.style.transform = `rotate(${secondDegrees}deg)`;
+          minHand.style.transform = `rotate(${mindeg}deg)`;
+          hourHand.style.transform = `rotate(${hrdeg}deg)`;
+      }
+      setInterval(getDate,1000);
+   ```
+   What happens here is we just call the date object once in the beginning after that the hands are updated by simple math. This way secon hand never turns back to zero.
    
+   # Thats It ! Yay !
 
