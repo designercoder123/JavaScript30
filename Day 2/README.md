@@ -31,10 +31,11 @@ The html file contains 3 div elements where each div corresponds to a certain ha
       ```
       function calcdeg(time,turn)
       {
-         return ((time*turn)/360) +90;
+         return ((time/turn)*360) +90;
        }
        ```
    * Now we need a function that would call the setDate function every second to update the time. For this we use `setInterval(setDate,1000)`. In the main function body we need to tranform the angle each hand is turning. 
+   
    ```
       const secHand = document.querySelector('.second-hand');
       const minHand = document.querySelector('.min-hand');
@@ -54,7 +55,8 @@ The html file contains 3 div elements where each div corresponds to a certain ha
       }
       setInterval(getDate,1000);
   ```
-  if you choose to go with the second method just call the function wherever the degree is being calculated.
+  
+  * If you choose to go with the second method just call the function wherever the degree is being calculated.
   
   # Awesome ! its done !
   
