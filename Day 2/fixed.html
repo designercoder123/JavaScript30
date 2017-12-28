@@ -52,7 +52,7 @@
       height: 100%;
       transform: translateY(-3px); /* account for the height of the clock hands */
     }
-    .hand {
+    .second-hand {
       width:50%;
       height:6px;
       background:black;
@@ -63,6 +63,30 @@
       transition: all 0.05s;
       transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
     }
+      .min-hand{
+      width:40%;
+      height:6px;
+      background:black;
+      position: absolute;
+      top:50%;
+      left: 10%;
+        transform: rotate(90deg);
+      transform-origin: 100%;
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      }
+      .hour-hand{
+          width:30%;
+      height:6px;
+      background:black;
+      position: absolute;
+      top:50%;
+      left: 20%;
+        transform: rotate(90deg);
+      transform-origin: 100%;
+      transition: all 0.05s;
+      transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+      }
   </style>
 
   <script>
