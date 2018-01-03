@@ -6,6 +6,8 @@ We are provided with an html file which contains 5 panels which are arranged ver
 
 ## Guide
 
+## CSS
+
 * We first start with making the `display` of `.panels` class, a flex. This makes the panels align horizontally, leaving some space on the right. This is because the panels are not utilising the whole screen. 
   ```CSS
   // in the .panel class
@@ -45,5 +47,28 @@ We are provided with an html file which contains 5 panels which are arranged ver
             flex : 5;
            }
           ```
-          
-          
+        3. Now as soon as we click the panel we want the texts to come back.
+        ```CSS
+        .panel.open-active > *:last-child {
+          transform: translateY(0);
+        }
+        .panel.open-active > *:first-child {
+          transform: translateY(0);
+        }
+        ```
+   ### JS
+    * Now we want to make the on click functions for the animations to take place.
+      ```JS
+      const panel = document.querySelectorAll(`.panel`);
+      function toggleopen{
+        this.classlist.toggle(`open`);
+      }
+      function toggleopenactive(e){
+        if(e.propertyName.includes('flex'){
+        this.classList.toggle(`open-active`);
+        }
+      }
+      panel.forEach(panel => panel.addEventListener('click',toggleopen);
+      panel.forEach(panel => panel.addEventListener('transitionend',toggleopenactive);
+     ```
+     
