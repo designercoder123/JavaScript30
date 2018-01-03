@@ -68,8 +68,8 @@ We are provided with an html file which contains 5 panels which are arranged ver
         this.classList.toggle(`open-active`);
         }
       }
-      panel.forEach(panel => panel.addEventListener('click',toggleopen);
-      panel.forEach(panel => panel.addEventListener('transitionend',toggleopenactive);
+      panel.forEach(panel => panel.addEventListener('click',toggleopen));
+      panel.forEach(panel => panel.addEventListener('transitionend',toggleopenactive));
       ```
-   # And thats a wrap for day 5 !
+   ### And thats a wrap for day 5 !
      
