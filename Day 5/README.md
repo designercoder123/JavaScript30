@@ -64,11 +64,12 @@ We are provided with an html file which contains 5 panels which are arranged ver
         this.classlist.toggle(`open`);
       }
       function toggleopenactive(e){
-        if(e.propertyName.includes('flex'){
+        if(e.propertyName.includes('flex'){     // we want to toggle this class only when our flex property changes.
         this.classList.toggle(`open-active`);
         }
       }
       panel.forEach(panel => panel.addEventListener('click',toggleopen);
       panel.forEach(panel => panel.addEventListener('transitionend',toggleopenactive);
-     ```
+      ```
+   # And thats a wrap for day 5 !
      
