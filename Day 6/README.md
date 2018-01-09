@@ -67,9 +67,10 @@ Some links you might find useful for this project :
     ```JS
     function displayMatch(){
     const finArray = wordMatch(this.value,cities);
-    const output = finArray.map(place => {` 
+    const output = finArray.map(place => {
     const cityName = place.city.replace(regex,`<span class ="hl">${this.value}</span>`);
     const StateName = place.state.replace(regex,`<span class ="hl">${this.value}</span>`);
+    `
     <li>
     <span class="name">${cityName}, ${stateName}</span>
     <span class="population">${palce.population}</span>
