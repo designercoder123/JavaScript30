@@ -13,16 +13,35 @@ First of all, i watched the video and tried to implement the method, but that di
 
 * First we want to add an id or className to our checkboxes.
 
-```HTML
+```HTM
 <input type = "checkbox" id="0">
  OR
 <input type ="checkbox" class ="0">
 ```
 * Next we hop onto JS.
-  * ### Looking into the logic
-    * The logic is pretty starightforward. 
-    * So lets consider an array of integers 
-      ```JS
-      let arr = [false,false,false,false];
-      ```
-      Now, we need to go over each element of the array and as we go over them they turn `true` and if you jump one or more elements
+  * First we need to select all the checkboxes.
+    ```JS
+    const check = document.querySelectorAll('.checkboxes');
+    ```
+  * Now, since we have all the checkboxes we need to add an event listener that listens for the click on the checkbox.
+    ```JS
+    check.addEventListener('click',checked);
+    ```
+  * Lets create a variable `lastChecked` to store the lastchecked checkbox.
+    ```JS
+    let lastChecked;
+    ```
+  * Now, lets create the function `checked`.
+    ```JS
+    function checked(e){
+    }
+    ```
+  * Next, we want to add a conditional statement in our function to check if the user was holding the shift button when he checked a checkbox. We also need a variable to check for the inbetween elements.
+    ```
+    // inside the function
+    let inBetween = false;
+    if(e.shiftKey && this.checked)
+    {
+    }
+    ```
+  * Great ! now we want to
